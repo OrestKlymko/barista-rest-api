@@ -30,4 +30,9 @@ public class BaristaController {
 	public ResponseEntity<?> getNotificationOfFinishedOrder(@PathVariable Long id){
 		return ResponseEntity.status(HttpStatus.OK).body("Order with id "+id+" already picked up");
 	}
+
+	@GetMapping("/all-orders")
+	public ResponseEntity<?> getAllOrders(){
+		return ResponseEntity.status(HttpStatus.OK).body(baristaService.getAllOrders());
+	}
 }
